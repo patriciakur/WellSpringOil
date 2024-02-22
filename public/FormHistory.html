@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="patStyle.css">
+
+<html>
+	<header>
+		<div class="header">
+			<div id="textbox">
+			  <h1 class="alignleft"><a href="#">Business Name</a></h1> <!-- Change to a logo and image link to home -->
+			  <h1 class="alignright">
+				<button onclick="myFunction()" class="dropbtn">Profile</button>
+				<div id="myDropdown" class="dropdown-content">
+					<a href="#">Profile Management</a>
+					<a href="#">Fuel Quotes</a>
+					<a href="#">Log out</a>
+				</div>
+			  </h1>
+			</div>
+			<div style="clear: both;"></div>
+		</div> 
+		
+		<script>
+			function myFunction() {
+			  document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			window.onclick = function(event) {
+			  if (!event.target.matches('.dropbtn')) {
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+				  var openDropdown = dropdowns[i];
+				  if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+				  }
+				}
+			  }
+			}
+		</script>
+	</header>
+	
+	<body>
+		<div class = "container" style="margin: 2vh 3vw">
+		  <p class="alignleftText"><a href="#">&#8592; Return to Fuel Quote Form</a></p>
+		  <p class="alignrightText">Sort By</p> <!-- use as reference https://www.w3schools.com/howto/howto_js_sort_list.asp -->
+		</div>
+		<div style="clear: both;"></div>
+			
+		<section id = "History">
+			<table>
+				<tr>
+					<th>Gallons Requested</th>
+					<th>Delivery Address</th>
+					<th>Delivery Date</th>
+					<th>Suggested Price</th>
+					<th>Total Amount Due</th>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<!-- use as reference https://stackoverflow.com/questions/11943479/create-html-table-from-sql-table -->
+			</table>
+		</section>
+	</body>
+</html> 

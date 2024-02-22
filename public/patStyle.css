@@ -1,0 +1,93 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    max-width: 100vw;
+	height: 7vh;
+    margin: 0 auto;
+    padding: 10px 20px;
+	background-color: #c8102e;
+	color: #FFFFFF ;
+}
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.container{
+	margin: 10vh 2vw;
+}
+.alignleftText {
+	float: left;
+	
+}
+.alignrightText {
+	float: right;
+}
+
+
+table {
+  border-collapse: collapse;
+  margin: 5vh auto;
+  width: 95vw;
+}
+
+td, th {
+  border: 1px solid #1aba94;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #ccf0e7;
+}
+
+.dropbtn {
+  background-color: #c8102e;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #960C22;
+}
+
+.dropdown {
+  float: right;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  margin: 5px 20px;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: 0;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+
