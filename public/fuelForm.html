@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Form</title>
+    <link rel="stylesheet" href="formstyles.css">
+    <link rel="stylesheet" href="indexstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prata&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navBarTop">
+            <h1>Fuel Quote Form</h1>
+        </div>
+        <div class="navLine"></div>
+        <div class="navBarBottom">
+            <div class="navBarItem">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="navBarItem">
+                <a href="FormHistory.html">Fuel Quote History</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="fuel-form">
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <label for="gallons">Gallons Requested:</label>
+                    <input type="number" id="gallons" name="gallons" required>
+                </div>
+                <div class="form-group">
+                    <label for="delivery-address">Delivery Address:</label>
+                    <input type="text" id="delivery-address" name="delivery-address" readonly value="123 Main St, Houston, TX">
+                </div>
+                <div class="form-group">
+                    <label for="delivery-date">Delivery Date:</label>
+                    <input type="date" id="delivery-date" name="delivery-date">
+                </div>
+                <div class="form-group">
+                    <label for="price-per-gallon">Price per Gallon:</label>
+                    <input type="number" id="price-per-gallon" name="price-per-gallon">
+                </div>
+                <div class="form-group">
+                    <label for="total-amount-due">Total Amount Due:</label>
+                    <input type="number" id="total-amount-due" name="total-amount-due" readonly>
+                </div>
+                <button type="submit" class="btn">Calculate Total</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="footer" id="Contact">
+        <div class="contact">
+            <h2>WellSpring Oil Ltd.</h2>
+            <p>Email: reach@wellspring.com</p>
+            <p>Phone: 713-598-7209</p>
+        </div>
+        <div class="brick-n-mortar">
+            <h2>Our Office</h2>
+            <p>567 Oak Street <br>  Houston, TX 77007</p>
+            <p>Open daily, 10 am-5:30 pm.</p>
+            <p>Closed Thanksgiving Day and Christmas Day.</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2024 WellSpring Oil. All rights reserved.</p>
+    </div>
+</body>
+</html>
