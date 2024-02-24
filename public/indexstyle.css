@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Raleway;
+    line-height: 1.6;
+}
+
+
+
+
+
+
+
+header {
+    background: #000000;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 48px;
+}
+header a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navBarTop {
+    height: 13vh;
+    padding: 10px;
+    text-align: center;
+}
+
+.navLine {
+    border-bottom: 1px solid purple;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.navBarBottom {
+    height: 7vh;
+    padding: 10px;
+    display: flex;
+}
+
+.navBarItem {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 33.3vw;
+    text-align: center;
+}
+
+  
+  .parallax-refinery {
+    background-image: url('assets/refinery.jpg'); 
+    min-height: 80vh;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .parallax-refinery::before { /*The ::before pseudo-element is used to create a layer on top of the background image.*/
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    overflow: hidden;
+}
+
+
+
+
+
+.aboutUs {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 100px;
+    padding-right: 100px;
+    background: rgb(255, 255, 255);
+    padding-top: 50px;
+    color: rgb(0, 0, 0);
+}
+
+.aboutP {
+    padding-top: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background: rgb(255, 255, 255);
+    padding-bottom: 50px;
+    color: rgb(0, 0, 0);
+}
+.aboutUs h2 {
+    font-size: 24px;
+}
+
+.aboutP p {
+    font-size: 36px;
+    color: rgb(125, 125, 125);
+}
+.underline {
+    text-decoration: underline;
+    text-decoration-color: purple;
+    text-decoration-thickness: 4px;
+  }
+  
+
+.parallax-expressway {
+    background-image: url('assets/tokyoExpressway.jpg'); 
+    min-height: 80vh;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .parallax-expressway::before { /*The ::before pseudo-element is used to create a layer on top of the background image.*/
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    overflow: hidden;
+}
+
+
+
+
+
+
+.testimonials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px;
+    background-color: #000000;
+    color: #ffffff;
+
+}
+
+.testim {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px; /* Adjust as needed */
+    max-width: 60vw;
+}
+
+.testim p {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    font-size: 24px;
+}
+
+.testim-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#Maria {
+    min-width: 100px;
+    text-align: center;
+    order: 1;
+}
+#Maria img {
+    width: 100px;
+    height: 100px;
+}
+#Harry {
+    min-width: 100px;
+    text-align: center;
+}
+#Harry img {
+    width: 100px;
+    height: 100px;
+}
+#Belle {
+    min-width: 100px;
+    text-align: center;
+    order: 1;
+}
+#Belle img {
+    width: 100px;
+    height: 100px;
+}
+
+
+.fuelform {
+    width: 100%;
+    padding: 50px;
+    height: 600px;
+    display: flex;
+    align-items: center; /* Vertically center the child elements */
+    justify-content: center; /* Horizontally center the child elements */
+}
+
+.purble {
+    width: 1000px;
+    height: 500px; /* Set the height as needed */
+    background-image: linear-gradient(to right,rgba(0,0,0,0) 25%, rgba(0, 0, 0, .5) 50%, rgba(0, 0, 0, .65) 75%), url('assets/purple.jpg');
+    overflow: hidden;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.fuelButton {
+    max-width: 40%;
+    margin: 50px;
+    color: #ffffff;
+}
+.fuelButton h2 {
+    font-size: 48px;
+}
+.fuelButton p {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.purple-button {
+    background-color: purple;
+    color: white;
+    width: 125px;
+    height: 75px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.purple-button:hover {
+    background-color: darkpurple;
+}
+
+
+
+
+
+.footer {
+    background: purple;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.contact {
+    margin: 100px;
+}
+
+.copyright {
+    background-color: purple;
+    text-align: center;
+    color: #ffffff;
+    font-size: 12px;
+}
