@@ -12,7 +12,7 @@ section {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background: url('shell.jpg');
+    background: url('assets/purple_swirl.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -27,25 +27,25 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(40px);
+    backdrop-filter: blur(50px);
 }
 
 .register-box {
     position: relative;
     width: 400px;
-    height: 450px;
+    height: 525px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(40px);
+    backdrop-filter: blur(50px);
 }
 
 h2 {
     font-size: 2em;
-    color: #162938;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -53,7 +53,7 @@ h2 {
     position: relative;
     width: 310px;
     margin: 30px 0;
-    border-bottom: 2px solid #162938;
+    border-bottom: 2px solid #ffffff;
     outline: none;
 }
 
@@ -63,7 +63,7 @@ h2 {
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: #162938;
+    color: #ffffff;
     pointer-events: none;
     transition: .5s;
 }
@@ -80,7 +80,7 @@ h2 {
     border: none;
     outline: none;
     font-size: 1em;
-    color: #162938;
+    color: #ffffff;
     font-weight: 600;
     padding: 0 35px 0 5px;
 }
@@ -95,7 +95,7 @@ h2 {
 .remember-forgot {
     margin: -15px 0 15px;
     font-size: .9em;
-    color: #162938;
+    color: #ffffff;
     display: flex;
     justify-content: space-between;
 }
@@ -105,7 +105,7 @@ h2 {
 }
 
 .remember-forgot a {
-    color: #162938;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 600;
 }
@@ -123,7 +123,7 @@ button {
     cursor: pointer;
     font-size: 1em;
     color: #fff;
-    background: #162938;
+    background: #000000;
     font-weight:500;
 }
 
@@ -134,14 +134,14 @@ button {
 
 .register-link {
     font-size: .9em;
-    color: #162938;
+    color: #ffffff;
     text-align: center;
     margin: 25px 0 10px;
     font-weight: 500;
 }
 
 .register-link p a {
-    color: #162938;
+    color: #ffffff;
     font-weight: 600;
     text-decoration: none;
 }
@@ -149,3 +149,18 @@ button {
     text-decoration: underline;
 }
 
+
+.home-link {
+    font-size: .9em;
+    text-align: center;
+    margin: 25px 0 10px;
+    font-weight: 500;
+}
+.home-link a {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.register-link p a:hover{
+    text-decoration: underline;
+}
