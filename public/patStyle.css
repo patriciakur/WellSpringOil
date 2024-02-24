@@ -91,3 +91,31 @@ tr:nth-child(even) {
 
 .show {display: block;}
 
+
+
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  background: purple;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.contact {
+  margin: 100px;
+}
+
+.copyright {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: purple;
+  text-align: center;
+  color: #ffffff;
+  font-size: 12px;
+}
