@@ -1,3 +1,10 @@
+.cormorant-bold {
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +12,9 @@
 }
 
 body {
-    font-family: Raleway;
+    font-family: "Cormorant", serif;
     line-height: 1.6;
 }
-
-
-
-
-
-
 
 header {
     background: #000000;
@@ -26,6 +27,7 @@ header {
 header h1 {
     font-size: 48px;
 }
+
 header a {
     font-size: 24px;
     color: #fff;
@@ -58,16 +60,16 @@ header a {
     text-align: center;
 }
 
-  
 .parallax-refinery {
-    background-image: url('assets/violet_swirl.jpg'); 
+    background-image: url('assets/violet_swirl.jpg');
     min-height: 85vh;
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-  .parallax-refinery::before { /*The ::before pseudo-element is used to create a layer on top of the background image.*/
+}
+
+.parallax-refinery::before {
     content: "";
     position: absolute;
     top: 0;
@@ -91,20 +93,22 @@ header a {
 .hero {
     position: absolute;
     z-index: 10;
-    top: calc(50% + 100px); /* Position below the overlay text */
+    top: calc(50% + 100px);
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%; /* Adjust width as needed */
+    width: 80%;
     color: #ffffff;
 }
+
 .hero h2 {
     color: #ffffff;
-    font-size: 36px;
+    font-size: 34px;
 }
-.hero p {
+
+.hero h3 {
     color: #ffffff;
     font-size: 24px;
 }
@@ -116,22 +120,16 @@ header a {
 
 .divider {
     width: 3px;
-    height: 100px; /* Adjust height as needed */
+    height: 100px;
     background-color: #ffffff;
 }
-
-
-
-
-
-
 
 .text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px; /* Adjust the gap between divs as needed */
-    padding: 100px 100px 100px; /* Adjust horizontal padding as needed */
+    gap: 20px;
+    padding: 100px 100px 100px;
 }
 
 .text {
@@ -140,7 +138,7 @@ header a {
 }
 
 .text h2 {
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .textP {
@@ -148,7 +146,7 @@ header a {
     color: rgb(0, 0, 0);
 }
 
-.textP p {
+.textP h3 {
     font-size: 36px;
     color: rgb(125, 125, 125);
 }
@@ -170,22 +168,22 @@ header a {
     height: auto;
     max-width: 500px;
 }
+
 .buffer {
     height: 150px;
     background-color: #ffffff;
 }
 
-
 .parallax-expressway {
-    background-image: url('assets/tokyoExpressway.jpg'); 
+    background-image: url('assets/tokyoExpressway.jpg');
     min-height: 50vh;
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 
-  .parallax-expressway::before { /*The ::before pseudo-element is used to create a layer on top of the background image.*/
+.parallax-expressway::before {
     content: "";
     position: absolute;
     top: 0;
@@ -196,15 +194,13 @@ header a {
     overflow: hidden;
 }
 
-
-
-
 .companies {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .companies h2 {
     font-size: 48px;
     padding-top: 50px;
@@ -225,17 +221,16 @@ header a {
     padding: 50px;
     background-color: #ffffff;
     color: #000000;
-
 }
 
 .testim {
     display: flex;
     justify-content: space-between;
-    margin: 30px; /* Adjust as needed */
+    margin: 30px;
     max-width: 1000px;
 }
 
-.testim p {
+.testim h3 {
     display: flex;
     align-items: center;
     padding: 25px;
@@ -247,48 +242,54 @@ header a {
     flex-direction: column;
 }
 
-
 #Maria {
     min-width: 150px;
     text-align: center;
     order: 1;
 }
+
 #Maria img {
     width: 150px;
     height: 150px;
 }
+
 #Harry {
     min-width: 150px;
     text-align: center;
 }
+
 #Harry img {
     width: 150px;
     height: 150px;
 }
+
 #Belle {
     min-width: 150px;
     text-align: center;
     order: 1;
 }
+
 #Belle img {
     width: 150px;
     height: 150px;
 }
-
 
 .fuelform {
     width: 100%;
     padding: 50px;
     height: 600px;
     display: flex;
-    align-items: center; /* Vertically center the child elements */
-    justify-content: center; /* Horizontally center the child elements */
+    align-items: center;
+    /* Vertically center the child elements */
+    justify-content: center;
+    /* Horizontally center the child elements */
 }
 
 .purble {
     width: 1000px;
-    height: 500px; /* Set the height as needed */
-    background-image: linear-gradient(to right,rgba(0,0,0,0) 25%, rgba(0, 0, 0, .5) 50%, rgba(0, 0, 0, .65) 75%), url('assets/purple.jpg');
+    height: 500px;
+    /* Set the height as needed */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, .5) 50%, rgba(0, 0, 0, .65) 75%), url('assets/purple.jpg');
     overflow: hidden;
     background-size: contain;
     background-position: center;
@@ -297,18 +298,22 @@ header a {
     justify-content: end;
     align-items: center;
 }
+
 .fuelButton {
     max-width: 40%;
     margin: 50px;
     color: #ffffff;
 }
+
 .fuelButton h2 {
     font-size: 48px;
 }
-.fuelButton p {
+
+.fuelButton h3 {
     margin-top: 25px;
     margin-bottom: 25px;
 }
+
 .purple-button {
     background-color: purple;
     color: white;
