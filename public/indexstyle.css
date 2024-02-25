@@ -33,9 +33,10 @@ header a {
 }
 
 .navBarTop {
-    height: 13vh;
-    padding: 10px;
-    text-align: center;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navLine {
@@ -45,7 +46,7 @@ header a {
 }
 
 .navBarBottom {
-    height: 7vh;
+    height: 5vh;
     padding: 10px;
     display: flex;
 }
@@ -58,15 +59,14 @@ header a {
 }
 
   
-  .parallax-refinery {
-    background-image: url('assets/refinery.jpg'); 
-    min-height: 80vh;
+.parallax-refinery {
+    background-image: url('assets/violet_swirl.jpg'); 
+    min-height: 85vh;
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
   }
-
   .parallax-refinery::before { /*The ::before pseudo-element is used to create a layer on top of the background image.*/
     content: "";
     position: absolute;
@@ -74,50 +74,111 @@ header a {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0.5) 100%);
     overflow: hidden;
 }
 
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    font-size: 30px;
+}
 
-
-
-
-.aboutUs {
+.hero {
+    position: absolute;
+    z-index: 10;
+    top: calc(50% + 100px); /* Position below the overlay text */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    align-items: flex-end;
-    padding-left: 100px;
-    padding-right: 100px;
-    background: rgb(255, 255, 255);
-    padding-top: 50px;
-    color: rgb(0, 0, 0);
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Adjust width as needed */
+    color: #ffffff;
 }
-
-.aboutP {
-    padding-top: 15px;
-    padding-left: 100px;
-    padding-right: 100px;
-    background: rgb(255, 255, 255);
-    padding-bottom: 50px;
-    color: rgb(0, 0, 0);
+.hero h2 {
+    color: #ffffff;
+    font-size: 36px;
 }
-.aboutUs h2 {
+.hero p {
+    color: #ffffff;
     font-size: 24px;
 }
 
-.aboutP p {
+.column {
+    flex: 1;
+    text-align: center;
+}
+
+.divider {
+    width: 3px;
+    height: 100px; /* Adjust height as needed */
+    background-color: #ffffff;
+}
+
+
+
+
+
+
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between divs as needed */
+    padding: 100px 100px 100px; /* Adjust horizontal padding as needed */
+}
+
+.text {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.text h2 {
+    font-size: 24px;
+}
+
+.textP {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.textP p {
     font-size: 36px;
     color: rgb(125, 125, 125);
 }
+
 .underline {
     text-decoration: underline;
     text-decoration-color: purple;
     text-decoration-thickness: 4px;
-  }
-  
+}
+
+.imgRow {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imgRow img {
+    border-radius: 10px;
+    width: 25vw;
+    height: auto;
+    max-width: 500px;
+}
+.buffer {
+    height: 150px;
+    background-color: #ffffff;
+}
+
 
 .parallax-expressway {
     background-image: url('assets/tokyoExpressway.jpg'); 
-    min-height: 80vh;
+    min-height: 50vh;
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -138,7 +199,23 @@ header a {
 
 
 
+.companies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.companies h2 {
+    font-size: 48px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
 
+.companies img {
+    width: 50vw;
+    height: auto;
+    max-width: 1200px;
+}
 
 .testimonials {
     display: flex;
@@ -146,8 +223,8 @@ header a {
     justify-content: center;
     flex-direction: column;
     padding: 50px;
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
 
 }
 
@@ -155,7 +232,7 @@ header a {
     display: flex;
     justify-content: space-between;
     margin: 30px; /* Adjust as needed */
-    max-width: 60vw;
+    max-width: 1000px;
 }
 
 .testim p {
@@ -172,30 +249,30 @@ header a {
 
 
 #Maria {
-    min-width: 100px;
+    min-width: 150px;
     text-align: center;
     order: 1;
 }
 #Maria img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 #Harry {
-    min-width: 100px;
+    min-width: 150px;
     text-align: center;
 }
 #Harry img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 #Belle {
-    min-width: 100px;
+    min-width: 150px;
     text-align: center;
     order: 1;
 }
 #Belle img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 
 
