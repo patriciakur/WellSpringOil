@@ -4,7 +4,7 @@
   "description": "Group 75 COSC 4353 Project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "start": "nodemon server.js"
   },
   "keywords": [],
@@ -16,6 +16,8 @@
     "pg": "^8.11.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.0",
+    "puppeteer": "^22.6.1"
   }
 }

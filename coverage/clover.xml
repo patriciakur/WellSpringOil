@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1711598145844" clover="3.2.0">
+  <project timestamp="1711598145844" name="All files">
+    <metrics statements="25" coveredstatements="25" conditionals="13" coveredconditionals="12" methods="7" coveredmethods="7" elements="45" coveredelements="44" complexity="0" loc="25" ncloc="25" packages="1" files="2" classes="2"/>
+    <file name="login.js" path="C:\Users\Dinh\FuelPredictor\group75\test\login.js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+    </file>
+    <file name="validation.js" path="C:\Users\Dinh\FuelPredictor\group75\test\validation.js">
+      <metrics statements="21" coveredstatements="21" conditionals="13" coveredconditionals="12" methods="6" coveredmethods="6"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="4" count="10" type="stmt"/>
+      <line num="5" count="10" type="cond" truecount="6" falsecount="0"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="20" count="2" type="stmt"/>
+      <line num="21" count="14" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+      <line num="45" count="1" type="cond" truecount="4" falsecount="1"/>
+      <line num="49" count="1" type="stmt"/>
+      <line num="50" count="1" type="stmt"/>
+      <line num="65" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
