@@ -1,54 +1,126 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="patStyle.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Quote History</title>
+    <link rel="stylesheet" href="patStyle.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="formHistoryPull.js"></script>
+</head>
 
 <html>
 	<header>
 		<div class="header">
 			<div id="textbox">
-			  <h1 class="alignleft"><a href="#">WellSpring Oil Ltd.</a></h1> <!-- Change to a logo and image link to home -->
+			  <h1 class="alignleft"><a href="index.html" style = "color:white;">WellSpring Oil Ltd.</a></h1> <!-- change to a logo and image link to home -->
 			  <h1 class="alignright">
-				<button onclick="myFunction()" class="dropbtn">Profile</button>
-				<div id="myDropdown" class="dropdown-content">
-					<a href="#">Profile Management</a>
-					<a href="#">Fuel Quotes</a>
+				<button onclick="openDrop(dropdown)" id= "dropmenubtn" class="dropbtn">Profile</button>
+				<div id="dropdown" class="dropdown-content" style="float:right">
+					<a href="profile.html">Profile Management</a>
+					<a href="fuelForm.html">Fuel Quote Form</a>
 					<a href="#">Log out</a>
 				</div>
 			  </h1>
 			</div>
 			<div style="clear: both;"></div>
 		</div> 
-		
-		<script>
-			function myFunction() {
-			  document.getElementById("myDropdown").classList.toggle("show");
-			}
-
-			window.onclick = function(event) {
-			  if (!event.target.matches('.dropbtn')) {
-				var dropdowns = document.getElementsByClassName("dropdown-content");
-				var i;
-				for (i = 0; i < dropdowns.length; i++) {
-				  var openDropdown = dropdowns[i];
-				  if (openDropdown.classList.contains('show')) {
-					openDropdown.classList.remove('show');
-				  }
-				}
-			  }
-			}
-		</script>
+		<div class ="header">
+			<h1 style="text-align:center; color: white; position:relative;">Fuel Quote History</h1>
+		</div>
 	</header>
+
+	<script>
+		window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn') && !event.target.matches('.filterdropbtn') && !event.target.matches("input")) {
+				closeDrop();
+			}
+			if(event.target.matches("button") && event.target.id != "submitFilters" && event.target.id != "clearFilters"){
+				switch(event.target.id){
+					case "galReqButton":
+						openDrop(galReqDropdown);
+						break;
+					case "addressButton":
+						openDrop(addressDropdown);
+						break;
+					case "dateButton":
+						openDrop(dateDropdown);
+						break;
+					case "suggestedPriceButton":
+						openDrop(suggestedPriceDropdown);
+						break;
+					case "amtDueButton":
+						openDrop(amtDueDropdown);
+						break;
+					case "dropmenubtn":
+						openDrop(dropdown);
+					break;
+				}
+			}
+		};
+	</script>
 	
-	<body>
+	<body onload="pullHistory()">
 		<div class = "container" style="margin: 2vh 3vw">
-		  <p class="alignleftText"><a href="#">&#8592; Return to Fuel Quote Form</a></p>
-		  <p class="alignrightText">Sort By</p> <!-- use as reference https://www.w3schools.com/howto/howto_js_sort_list.asp -->
+		  <p class="alignleftText"><a href="fuelForm.html">&#8592; Return to Fuel Quote Form</a></p>
 		</div>
 		<div style="clear: both;"></div>
-			
-		<section id = "History">
-			<table>
+
+		<!-- filter buttons section  -->
+		
+		<div style="margin: 2vh 3vw; width: 75vw; float: left"> 
+			<p style = "font-size: 20; line-height:52px;"><i class="fa fa-filter" style="padding: 15px"></i> Filter By: </p>
+			<div class="dropdown">
+				<button id="galReqButton" class="filterdropbtn">Gallons Requested</button>
+				<div id="galReqDropdown" class="filterdropdown-content">
+					<label>Min: </label>
+					<input type="number"  id="minGallons" placeholder="0" oninput="changeButtonClass2(minGallons, maxGallons, galReqButton, galReqDropdown)">
+					<label>Max: </label>
+					<input type="number"  id="maxGallons" placeholder="0" oninput="changeButtonClass2(minGallons, maxGallons, galReqButton, galReqDropdown)">
+				</div>
+			</div>
+			<div class="dropdown">
+				<button id="addressButton" class="filterdropbtn">Delivery Address</button>
+				<div id="addressDropdown" class="filterdropdown-content">
+					<label>Address: </label>
+					<input type="text"  style="width: 350px" placeholder = "567 Oak Street Houston, TX 77007" id="filteringAddress" oninput="changeButtonClass(filteringAddress, addressButton, addressDropdown)">
+				</div>
+			</div>		
+			<div class="dropdown">
+				<button id="dateButton" class="filterdropbtn">Delivery Date</button>
+				<div id="dateDropdown" class="filterdropdown-content">
+					<label>Between </label>
+					<input type="date"  id="startDate" oninput="changeButtonClass2(startDate, endDate, dateButton, dateDropdown)">
+					<label>  to</label>
+					<input type="date"  id="endDate" oninput="changeButtonClass2(startDate, endDate, dateButton, dateDropdown)">
+				</div>
+			</div>
+			<div class="dropdown">
+				<button id="suggestedPriceButton" class="filterdropbtn">Suggested Price</button>
+				<div id="suggestedPriceDropdown" class="filterdropdown-content">
+					<label>Between</label>
+					<input type="number"  placeholder="$0.00" id="minSuggestedPrice" oninput="changeButtonClass2(minSuggestedPrice, maxSuggestedPrice, suggestedPriceButton, suggestedPriceDropdown)">
+					<label>to</label>
+					<input type="number" placeholder="$0.00" id="maxSuggestedPrice" oninput="changeButtonClass2(minSuggestedPrice, maxSuggestedPrice, suggestedPriceButton, suggestedPriceDropdown)">
+				</div>
+			</div>
+			<div class="dropdown">
+				<button id="amtDueButton" class="filterdropbtn">Total Amount Due</button>
+				<div id="amtDueDropdown" class="filterdropdown-content">
+					<label>Between</label>
+					<input type="number" placeholder="$0.00" id="minDueAmt" oninput="changeButtonClass2(minDueAmt, maxDueAmt, amtDueButton, amtDueDropdown)">
+					<label>to</label>
+					<input type="number" placeholder="$0.00" id="maxDueAmt" oninput="changeButtonClass2(minDueAmt, maxDueAmt, amtDueButton, amtDueDropdown)">
+				</div>
+			</div>
+			<div class="dropdown">
+				<button onclick="createFilters()" id="submitFilters" class="dropbtn" style= "border-radius: 25px;">Search</button>
+				<button onclick="clearBoth()" id="clearFilters" class="filterdropbtn">Clear Filters</button>
+			</div>
+		</div>
+
+		<table id = "historyTable">
+			<thead>
 				<tr>
 					<th>Gallons Requested</th>
 					<th>Delivery Address</th>
@@ -56,56 +128,60 @@
 					<th>Suggested Price</th>
 					<th>Total Amount Due</th>
 				</tr>
+			</thead>
+			<tbody>
+				<!-- table rows will be populated here by the JS -->
+				<!-- placeholder data -->
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td>1</td>
+					<td>123 Lane</td>
+					<td>2024-12-03</td>
+					<td>123</td>
+					<td>165</td>
 				</tr>
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td>5</td>
+					<td>712 Lane</td>
+					<td>2024-01-02</td>
+					<td>500</td>
+					<td>7000</td>
 				</tr>
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td>2</td>
+					<td>123 Lane</td>
+					<td>2024-05-02</td>
+					<td>163</td>
+					<td>186</td>
 				</tr>
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td>4</td>
+					<td>712 Lane</td>
+					<td>2024-07-08</td>
+					<td>2580</td>
+					<td>5000</td>
 				</tr>
-				<!-- use as reference https://stackoverflow.com/questions/11943479/create-html-table-from-sql-table -->
-			</table>
-		</section>
-
+			</tbody>
+		</table>
 
 
 
 		<div class="footer" id="Contact">
-			<div class="contact">
+			
+			<div class="contact" style="padding-left:94px">
 				<h2>WellSpring Oil Ltd.</h2>
 				<p>Email: reach@wellspring.com</p>
 				<p>Phone: 713-598-7209</p>
 			</div>
-			<div class="brick-n-mortar">
+			<div class="contact">
 				<h2>Our Office</h2>
 				<p>567 Oak Street <br>  Houston, TX 77007</p>
 				<p>Open daily, 10 am-5:30 pm.</p>
 				<p>Closed Thanksgiving Day and Christmas Day.</p>
 			</div>
-		</div>
-		<div class="copyright">
+			<div class="copyright">
 			<p>&copy; 2024 WellSpring Oil. All rights reserved.</p>
+			</div>
 		</div>
+		
 	</body>
 </html> 

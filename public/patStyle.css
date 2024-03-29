@@ -7,11 +7,11 @@
 
 .header {
     max-width: 100vw;
-	height: 7vh;
+	  height: 7vh;
     margin: 0 auto;
     padding: 10px 20px;
-	background-color: #c8102e;
-	color: #FFFFFF ;
+	  background-color: #000000;
+    color: #FFFFFF;
 }
 
 .alignleft {
@@ -32,6 +32,11 @@
 }
 
 
+a:link, a:visited {
+  text-decoration: none;
+}
+
+
 table {
   border-collapse: collapse;
   margin: 5vh auto;
@@ -39,17 +44,17 @@ table {
 }
 
 td, th {
-  border: 1px solid #1aba94;
+  border: 1px solid purple;
   text-align: left;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #ccf0e7;
+  background-color: rgb(250, 232, 250);
 }
 
 .dropbtn {
-  background-color: #c8102e;
+  background-color: #000000;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -58,13 +63,14 @@ tr:nth-child(even) {
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #960C22;
+  background-color: purple;
 }
 
 .dropdown {
-  float: right;
+  float: left;
   position: relative;
-  display: inline-block;
+  /*overflow: hidden;*/
+  padding:5px;
 }
 
 .dropdown-content {
@@ -91,7 +97,60 @@ tr:nth-child(even) {
 
 .show {display: block;}
 
+/* filter dropdowns */
 
+.filterdropbtn {
+  background-color: rgb(245, 245, 245);
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.filterdropbtn:hover, .filterdropbtn:focus {
+  background-color: rgb(192, 192, 192);
+}
+
+.filterdropbtnSelected {
+  background-color: rgb(248, 200, 248);
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.filterdropbtnSelected:hover, .filterdropbtnSelected:focus {
+  background-color: rgb(255, 175, 255);
+}
+
+.filterdropdown-content {
+  display: none;
+  left: 0;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: fit-content;
+  overflow: auto;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: 0;
+  z-index: 1;
+}
+
+.filterdropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+}
+
+.filterdropdown a:hover {background-color: #ddd;}
+.filterdropdown-content.show {display: block;}
 
 
 .footer {
@@ -101,13 +160,13 @@ tr:nth-child(even) {
   background: purple;
   color: #fff;
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   justify-content: center;
-  padding: 50px;
+  /*padding: 5px;*/
 }
 
 .contact {
-  margin: 100px;
+  margin: 50px;
 }
 
 .copyright {
@@ -118,4 +177,5 @@ tr:nth-child(even) {
   text-align: center;
   color: #ffffff;
   font-size: 12px;
+  padding-bottom: 2px;
 }
