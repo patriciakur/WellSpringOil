@@ -7,7 +7,7 @@ async function pullHistory() {
 
         //call to the route to get the form history
         const formHistory = await response.json(); 
-        console.log(formHistory);
+        console.log("called pullHistory");
         
         populateTable(formHistory);
     } catch(err){
