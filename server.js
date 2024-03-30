@@ -26,6 +26,10 @@ app.use('/login', loginRouter)
 
 app.listen(port, () => console.log(`Server running on http://localhost:${port}`))
 
+
+const fuelForm = require('./routes/fuelForm');
+app.use('/api', fuelForm);
+
 // Form History backend
 const formHist= require('./routes/formHistoryPull')
 app.use('/formHistory', formHist);
