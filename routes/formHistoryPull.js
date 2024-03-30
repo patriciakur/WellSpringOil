@@ -1,8 +1,8 @@
 const express = require('express');
-const router = express.Router();
 const pool = require('./creds');
+const router = express.Router();
 
-router.get('/form-history/:userId', async (req, res) => {
+router.get('/:userId', async (req, res) => {
     const userId = req.params.userId;
 
     // Query to fetch form history based on the UserID key
@@ -17,3 +17,5 @@ router.get('/form-history/:userId', async (req, res) => {
         }
     });
 });
+
+module.exports = router
