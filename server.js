@@ -25,3 +25,7 @@ const loginRouter = require('./routes/login')
 app.use('/login', loginRouter)
 
 app.listen(port, () => console.log(`Server running on http://localhost:${port}`))
+
+// Form History backend
+const formHist= require('./routes/formHistoryPull')
+app.use('/formHistory', formHist);
