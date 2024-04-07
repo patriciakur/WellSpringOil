@@ -35,11 +35,11 @@ router.get('/:user', async (req, res) => {
     console.log(`Checking - User: ${user}`)
     const checkUser = await pool.query(`SELECT * FROM usercredentials WHERE name = '${user}'`);
     if (checkUser.rows.length > 0){
-        console.log('Username exists! Invalid!....');
+        console.log('Username exists!....');
         res.json(checkUser);
     }
     else {
-        console.log('Username does not exist! Valid!....');
+        console.log('Username does not exist!....');
         res.json(checkUser);
     }
 })
