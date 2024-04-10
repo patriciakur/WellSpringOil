@@ -24,12 +24,19 @@ app.use("/register", registerRouter);
 const loginRouter = require('./routes/login')
 app.use('/login', loginRouter)
 
-app.listen(port, () => console.log(`Server running on http://localhost:${port}`))
-
+// const fuelForm = require('./routes/fuelForm');
+// app.use('/api', fuelForm);
 
 const fuelForm = require('./routes/fuelForm');
-app.use('/api', fuelForm);
+app.use('/submitQuote', fuelForm); //corrected to right path
 
 // Form History backend
 const formHist= require('./routes/formHistoryPull')
 app.use('/formHistory', formHist);
+
+const resetPw = require('./routes/resetPassword')
+app.use('/resetPwd', resetPw)
+
+app.listen(port, () => console.log(`Server running on http://localhost:${port}`))
+
+

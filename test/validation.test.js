@@ -23,3 +23,9 @@ test('tests for input validations', async () => {
     validation.checkValidsUserPwd(mock, 'dinhbui', 'Dinh1', 'Dinh1');
     expect(mock).toHaveBeenCalled();
   })
+
+  test('tests for password reset', async () => {
+    const mock = jest.fn();
+    validation.resetPw(mock);
+    expect(mock).toHaveBeenCalled();
+  })
