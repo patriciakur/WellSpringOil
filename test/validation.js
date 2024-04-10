@@ -62,4 +62,22 @@ async function checkValidsUserPwd(callback, username, password, confirm){
     }
 }
 
-module.exports = {containsChar, containsSpecialChars, containsSpecialCharsNumbers, containsSpace, UserNameExist, checkValidsUserPwd}
+async function resetPw(callback) {
+    callback()
+
+    try{
+        //Checking if user enter valid info
+        const response = await fetch(`http://localhost:3000/resetPwd/${userName}/${zipCode}`, {
+            method: "GET",
+            headers: {"Content-Type" : "application/json"},
+        });
+
+        
+        //if new password is valid
+        const response2 = await fetch(`http://localhost:3000/resetPwd`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},  
+        });
+    } catch(err) {}
+}    
+module.exports = {containsChar, containsSpecialChars, containsSpecialCharsNumbers, containsSpace, UserNameExist, checkValidsUserPwd, resetPw}

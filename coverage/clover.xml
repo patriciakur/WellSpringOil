@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1711598145844" clover="3.2.0">
-  <project timestamp="1711598145844" name="All files">
-    <metrics statements="25" coveredstatements="25" conditionals="13" coveredconditionals="12" methods="7" coveredmethods="7" elements="45" coveredelements="44" complexity="0" loc="25" ncloc="25" packages="1" files="2" classes="2"/>
-    <file name="login.js" path="C:\Users\Dinh\FuelPredictor\group75\test\login.js">
+<coverage generated="1712723798379" clover="3.2.0">
+  <project timestamp="1712723798379" name="All files">
+    <metrics statements="33" coveredstatements="32" conditionals="13" coveredconditionals="12" methods="9" coveredmethods="9" elements="55" coveredelements="53" complexity="0" loc="33" ncloc="33" packages="1" files="3" classes="3"/>
+    <file name="formHistoryPull.js" path="C:\Users\Dinh\Group75\group75\test\formHistoryPull.js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+    </file>
+    <file name="login.js" path="C:\Users\Dinh\Group75\group75\test\login.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="3" count="1" type="stmt"/>
       <line num="6" count="1" type="stmt"/>
       <line num="7" count="1" type="stmt"/>
       <line num="18" count="1" type="stmt"/>
     </file>
-    <file name="validation.js" path="C:\Users\Dinh\FuelPredictor\group75\test\validation.js">
-      <metrics statements="21" coveredstatements="21" conditionals="13" coveredconditionals="12" methods="6" coveredmethods="6"/>
+    <file name="validation.js" path="C:\Users\Dinh\Group75\group75\test\validation.js">
+      <metrics statements="25" coveredstatements="24" conditionals="13" coveredconditionals="12" methods="7" coveredmethods="7"/>
       <line num="3" count="2" type="stmt"/>
       <line num="4" count="10" type="stmt"/>
       <line num="5" count="10" type="cond" truecount="6" falsecount="0"/>
@@ -31,7 +38,11 @@
       <line num="45" count="1" type="cond" truecount="4" falsecount="1"/>
       <line num="49" count="1" type="stmt"/>
       <line num="50" count="1" type="stmt"/>
-      <line num="65" count="1" type="stmt"/>
+      <line num="66" count="1" type="stmt"/>
+      <line num="68" count="1" type="stmt"/>
+      <line num="70" count="1" type="stmt"/>
+      <line num="77" count="0" type="stmt"/>
+      <line num="83" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
