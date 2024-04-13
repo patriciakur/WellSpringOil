@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('./creds'); 
 
 async function updateUser(username, fullname, add1, city, state, zip,) {
-    const result = await pool.query('UPDATE clientinfo SET fullname= ?, address1 = ? , city = ? , state = ?, zip = ?, WHERE username = ? ', [fullname, add1, city, state, zip, username])
+    const result = await pool.query('UPDATE clientInfo SET fullname= ?, address1 = ? , city = ? , state = ?, zip = ?, WHERE username = ? ', [fullname, add1, city, state, zip, username])
     return result;
   }
 router.get('/profile', async(req, res) =>{
