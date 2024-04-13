@@ -1,6 +1,6 @@
 async function pullHistory() {
     try{
-        const response = await fetch(`http://localhost:3000/formHistory/${userId}`, {
+        const response = await fetch(`http://localhost:3000/formHistoryPull/${document.cookie}`, {
             method: "GET",
             headers: { "Content-Type": "application/json" },
         });
@@ -23,14 +23,14 @@ function populateTable(data) { //initialize table with data from backend
     tbody.innerHTML = '';
 
     // create a row for each item in the data
-    data.forEach(function(item) {
+    data.rows.forEach(function(item) {
         var row = document.createElement('tr');
         row.innerHTML = `
-            <td>${item.gallonsRequested}</td>
+            <td>${item.galRequested}</td>
             <td>${item.deliveryAddress}</td>
             <td>${item.deliveryDate}</td>
-            <td>${item.suggestedPrice}</td>
-            <td>${item.totalAmountDue}</td>
+            <td>${item.pricePerGallon}</td>
+            <td>${item.totalPrice}</td>
         `;
         tbody.appendChild(row);
     });
