@@ -34,9 +34,6 @@ app.use('/submitQuote', fuelForm); //corrected to right path
 const formHist= require('./routes/formHistoryPull')
 app.use('/formHistory', formHist); 
 
-// Profile Management 
-const profile = require( './routes/profile' )
-app.use("/profile", profile);
 
 const resetPw = require('./routes/resetPassword')
 app.use('/resetPwd', resetPw)
