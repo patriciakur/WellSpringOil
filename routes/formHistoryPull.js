@@ -20,8 +20,8 @@ router.get('/:cookie', async (req, res) => {
 
     // Query to fetch form history based on the UserID key
     const query = `SELECT "quoteID", "galRequested", "deliveryDate", "pricePerGallon", "totalPrice", "userID"
-	FROM public."fuelQuote"
-	WHERE "fuelQuote"."userID" = ${userID};`
+	FROM fuelQuote
+	WHERE userID = ${userID};`
 
     const checkHistory = await pool.query(query, (error, results) => {//[userId],
         if (error) {

@@ -24,9 +24,7 @@ app.use("/register", registerRouter);
 const loginRouter = require('./routes/login')
 app.use('/login', loginRouter)
 
-// const fuelForm = require('./routes/fuelForm');
-// app.use('/api', fuelForm);
-
+// Fuel Form backend
 const fuelForm = require('./routes/fuelForm');
 app.use('/submitQuote', fuelForm); //corrected to right path
 

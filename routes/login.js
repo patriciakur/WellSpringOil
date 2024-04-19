@@ -13,12 +13,12 @@ router.get('/:user/:pw', async (req, res) => {
     //Hash password
     hash = crypto.createHash('sha256').update(pw).digest('hex')
 
-    const checkUser = await pool.query(`SELECT * FROM usercredentials WHERE name = '${user}' AND password = '${hash}'`);
+    const checkUser = await pool.query(`SELECT * FROM user_credentials WHERE name = '${user}' AND password = '${hash}'`);
     // If user exists, delete the user from database, then insert new record with updated hash password
     if (checkUser.rows.length > 0){
         console.log('Valid....');
-        const deleteUser = await pool.query(`DELETE FROM usercredentials WHERE name = '${user}'`);
-        const insertUser = await pool.query(`INSERT INTO usercredentials (name, password) 
+        const deleteUser = await pool.query(`DELETE FROM user_credentials WHERE name = '${user}'`);
+        const insertUser = await pool.query(`INSERT INTO user_credentials (name, password) 
         VALUES ($1, $2) RETURNING *`, [user, hash]);
         res.json(checkUser);
     }
@@ -33,7 +33,7 @@ router.get('/:user', async (req, res) => {
     console.log('Checking username exists...');
     const {user} = req.params;
     console.log(`Checking - User: ${user}`)
-    const checkUser = await pool.query(`SELECT * FROM usercredentials WHERE name = '${user}'`);
+    const checkUser = await pool.query(`SELECT * FROM user_credentials WHERE name = '${user}'`);
     if (checkUser.rows.length > 0){
         console.log('Username exists!....');
         res.json(checkUser);

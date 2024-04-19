@@ -30,7 +30,7 @@ router.post("/", async ( req, res ) => {
 
                         
     try{
-        await pool.query(`UPDATE usercredentials SET password=$1 WHERE name=$2`, [hash, user]);
+        await pool.query(`UPDATE user_credentials SET password=$1 WHERE name=$2`, [hash, user]);
         res.status(200).send()
     }catch(err){
         console.error(err);

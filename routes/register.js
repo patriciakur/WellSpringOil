@@ -13,7 +13,7 @@ router.post('/:username/:password/:confirm', async (req, res) => {
     // Hash password for security purpose
     hash = crypto.createHash('sha256').update(password).digest('hex')
     
-    var newAccount = await pool.query(`INSERT INTO usercredentials (name, password) 
+    var newAccount = await pool.query(`INSERT INTO user_credentials (name, password) 
         VALUES ($1, $2) RETURNING *`, [username, hash]);
     console.log(newAccount);
     res.json();
