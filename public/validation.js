@@ -169,3 +169,42 @@ async function resetPw() {
         alert("Password updated!") 
     }
 }    
+
+async function checkZip(){
+    const firstname = document.querySelector("#firstname").value;
+    const lastname = document.querySelector("#lastname").value;
+    const street = document.querySelector("#street").value;
+    // var address2 = document.querySelector("#address2").value;
+    const city = document.querySelector("#city").value;
+    const state = document.querySelector("#state").value;
+    const zipcode = document.querySelector("#zipcode").value;
+    
+    if (containsChar(zipcode) || containsSpace(zipcode) || containsSpecialChars(zipcode) || zipcode.length < 5){
+        alert("Please enter a valid Zip Code!");
+        var btn = document.getElementById("updatesuccess");
+        btn.innerHTML = "";
+        event.preventDefault();
+    }
+    else{
+        // if (address2 == "") address2 = "NA";
+        if (firstname == "" || lastname == "" || street == "" || city == "" || state == ""  || zipcode == ""){
+            var btn = document.getElementById("updatesuccess");
+            btn.innerHTML = "<b> Please fill all the required fields</b>";
+        }
+        else{
+            try{
+                const response = await fetch(`http://localhost:3000/profile/${firstname}/${lastname}/${street}/${city}/${state}/${zipcode}`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify()
+                });
+                var btn = document.getElementById("updatesuccess");
+                btn.innerHTML = "<b>Update successfully!</b>";
+                
+            } catch(err){
+                console.log(err.message);
+            }
+        }
+    }
+    
+}

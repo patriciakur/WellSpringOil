@@ -36,5 +36,7 @@ app.use('/formHistoryPull', formHist);
 const resetPw = require('./routes/resetPassword')
 app.use('/resetPwd', resetPw)
 
+const profile = require('./routes/profileManagement')
+app.use('/profile', profile)
 app.listen(port, () => console.log(`Server running on http://localhost:${port}`))
 

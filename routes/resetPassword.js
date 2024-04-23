@@ -9,7 +9,7 @@ router.get('/:userName/:zipcode', async (req, res) => {
     console.log("Checking user:" + userName);
     console.log("Checking zipcode: " + zipcode);
 
-    const checkZip = await pool.query(`SELECT * FROM clientInfo WHERE username = '${userName}' AND zipcode = '${parseInt(zipcode)}'`);
+    const checkZip = await pool.query(`SELECT * FROM user_profile WHERE username = '${userName}' AND zip = '${parseInt(zipcode)}'`);
     if (checkZip.rows.length == 0){
         console.log("User not found");
         res.json(checkZip);
