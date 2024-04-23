@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fuel Quote History</title>
     <link rel="stylesheet" href="patStyle.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
     <script src="formHistoryPull.js"></script>
 </head>
 
 <html>
-	<header>
-		<div class="header">
-			<div id="textbox">
-			  <h1 class="alignleft"><a href="index.html" style = "color:white;">WellSpring Oil Ltd.</a></h1> <!-- change to a logo and image link to home -->
-			  <h1 class="alignright">
-				<button onclick="openDrop(dropdown)" id= "dropmenubtn" class="dropbtn">Profile</button>
-				<div id="dropdown" class="dropdown-content" style="float:right">
-					<a href="profile.html">Profile Management</a>
-					<a href="fuelForm.html">Fuel Quote Form</a>
-					<a href="#">Log out</a>
-				</div>
-			  </h1>
-			</div>
-			<div style="clear: both;"></div>
-		</div> 
-		<div class ="header">
-			<h1 style="text-align:center; color: white; position:relative;">Fuel Quote History</h1>
-		</div>
-	</header>
+    <header>
+        <div class="navBarTop">
+            <h1>Fuel Quote History</h1>
+        </div>
+        <div class="navLine"></div>
+        <div class="navBarBottom">
+            <div class="navBarItem">
+                <a href="Login.html">Log In/Register</a>
+            </div>
+			<div class="navBarItem">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="navBarItem">
+                <a href="fuelForm.html">Fuel Form</a>
+            </div>
+        </div>
+    </header>
 
 	<script>
 		window.onclick = function(event) {

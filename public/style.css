@@ -1,9 +1,63 @@
+.cormorant-bold {
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: "Cormorant", serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #000000;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 48px;
+}
+
+header a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navBarTop {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navLine {
+    border-bottom: 1px solid purple;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.navBarBottom {
+    height: 5vh;
+    padding: 10px;
+    display: flex;
+}
+
+.navBarItem {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 33.3vw;
+    text-align: center;
 }
 
 section {
@@ -11,7 +65,7 @@ section {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: calc(85vh - 1px);
     background: url('assets/purple_swirl.jpg');
     background-size: cover;
     background-position: center;
@@ -19,8 +73,8 @@ section {
 
 .login-box {
     position: relative;
-    width: 400px;
-    height: 450px;
+    width: 500px;
+    height: 550px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
@@ -32,8 +86,8 @@ section {
 
 .register-box {
     position: relative;
-    width: 400px;
-    height: 525px;
+    width: 500px;
+    height: 625px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
@@ -44,16 +98,16 @@ section {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 48px;
     color: #ffffff;
     text-align: center;
 }
 
 .input-box {
     position: relative;
-    width: 310px;
+    width: 360px;
     margin: 30px 0;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
     outline: none;
 }
 
@@ -62,7 +116,7 @@ h2 {
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    font-size: 1em;
+    font-size: 24px;
     color: #ffffff;
     pointer-events: none;
     transition: .5s;
@@ -79,7 +133,7 @@ h2 {
     background: transparent;
     border: none;
     outline: none;
-    font-size: 1em;
+    font-size: 24px;
     color: #ffffff;
     font-weight: 600;
     padding: 0 35px 0 5px;
@@ -94,7 +148,7 @@ h2 {
 
 .remember-forgot {
     margin: -15px 0 15px;
-    font-size: .9em;
+    font-size: 18px;
     color: #ffffff;
     display: flex;
     justify-content: space-between;
@@ -133,7 +187,7 @@ button {
 }
 
 .register-link {
-    font-size: .9em;
+    font-size: 20px;
     color: #ffffff;
     text-align: center;
     margin: 25px 0 10px;
@@ -149,18 +203,6 @@ button {
     text-decoration: underline;
 }
 
-
-.home-link {
-    font-size: .9em;
-    text-align: center;
-    margin: 25px 0 10px;
-    font-weight: 500;
-}
-.home-link a {
-    color: #ffffff;
-    font-weight: 600;
-    text-decoration: none;
-}
 .register-link p a:hover{
     text-decoration: underline;
 }
