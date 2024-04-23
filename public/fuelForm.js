@@ -20,7 +20,8 @@ async function submitForm() {
     const gallons = document.getElementById('gallons').value;
     const deliveryAddress = document.getElementById('delivery-address').value;
     const deliveryDate = document.getElementById('delivery-date').value;
-    // const pricePerGallon = document.getElementById('price-per-gallon').value; //this is filled by backend, not from user
+    const pricePerGallon = document.getElementById('price-per-gallon').value;
+    const total = document.getElementById('total-amount-due').value;
 
     // Send form data to server
     const response = await fetch('http://localhost:3000/submitQuote', {
@@ -28,8 +29,7 @@ async function submitForm() {
         headers: {
             'Content-Type': 'application/json'
         },
-        // body: JSON.stringify({ gallons, deliveryAddress, deliveryDate, pricePerGallon})
-        body: JSON.stringify({ gallons, deliveryAddress, deliveryDate})
+        body: JSON.stringify({ gallons, deliveryAddress, deliveryDate, pricePerGallon, total})
     });
 
     if (response.ok) {
@@ -40,8 +40,6 @@ async function submitForm() {
         alert('Failed to submit quote. Please try again.');
     }
 }
-
-// document.querySelector('form').addEventListener('submit', submitForm);
 
 //function to cal price per gallon
 async function calPricePerGallon()  {
@@ -64,4 +62,3 @@ async function calPricePerGallon()  {
         console.log(error);
     };
 }
-
