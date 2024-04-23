@@ -11,6 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Prata&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <script src="fuelForm.js"></script>
 </head>
 <body>
     <header>
@@ -30,7 +31,7 @@
 
     <section id="fuel-form">
         <div class="container">
-            <form>
+            <form action="">
                 <div class="form-group">
                     <label for="gallons">Gallons Requested:</label>
                     <input type="number" id="gallons" name="gallons" required>
@@ -41,18 +42,18 @@
                 </div>
                 <div class="form-group">
                     <label for="delivery-date">Delivery Date:</label>
-                    <input type="date" id="delivery-date" name="delivery-date">
+                    <input type="date" id="delivery-date" name="delivery-date" required>
                 </div>
                 <div class="form-group">
                     <label for="price-per-gallon">Price per Gallon:</label>
-                    <input type="number" id="price-per-gallon" name="price-per-gallon">
+                    <input type="text" id="price-per-gallon" name="price-per-gallon" disabled> <!--change type from number to text-->
                 </div>
                 <div class="form-group">
                     <label for="total-amount-due">Total Amount Due:</label>
-                    <input type="number" id="total-amount-due" name="total-amount-due" disabled>
+                    <input type="text" id="total-amount-due" name="total-amount-due" disabled> <!--change type from number to text-->
                 </div>
-                <button type="submit" class="btn">Calculate Total</button>
-                <button type="submit" class="btn">Save Quote</button>
+                <button type="submit" class="btn" id="cal">Calculate Total</button>
+                <button type="submit" class="btn" id="save">Save Quote</button>
             </form>
         </div>
     </section>
