@@ -12,6 +12,12 @@ addEventListener("DOMContentLoaded", function() {
     });
  });
 
+
+const username_ = sessionStorage.getItem("USERNAME_");
+const divElement = document.getElementById("myDiv");
+divElement.innerHTML = username_;
+
+
 //function to submit Form
 async function submitForm() {
     // event.preventDefault(); // Prevent default form submission

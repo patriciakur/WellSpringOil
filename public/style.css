@@ -14,6 +14,7 @@
 body {
     font-family: "Cormorant", serif;
     line-height: 1.6;
+    color: #fff;
 }
 
 header {
@@ -187,11 +188,11 @@ button {
 }
 
 .register-link {
-    font-size: 20px;
+    font-size: 22px;
     color: #ffffff;
     text-align: center;
     margin: 25px 0 10px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .register-link p a {
@@ -205,4 +206,25 @@ button {
 
 .register-link p a:hover{
     text-decoration: underline;
+}
+
+
+.footer {
+    background: purple;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.contact {
+    margin: 100px;
+}
+
+.copyright {
+    background-color: purple;
+    text-align: center;
+    color: #ffffff;
+    font-size: 12px;
 }

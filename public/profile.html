@@ -4,13 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
-    <style>
-        /* @import url('https://fonts.googleapis.com/css2?family=Poppins:&display=swap'); */
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
    <link rel="stylesheet" href="style.css"> 
    <script src="validation.js"></script>
 </head>
 <body>
+
+    <header>
+        <div class="navBarTop">
+            <h1>WellSpring Oil Ltd.</h1>
+        </div>
+        <div class="navLine"></div>
+        <div class="navBarBottom">
+            <div class="navBarItem">
+                <a href="index.html">Home</a>
+            </div>
+            </div>
+        </div>
+    </header>
     <section>
         <!-- Registration Box -->
         <div class="register-box">
@@ -18,27 +32,22 @@
                 <h2>User Profile</h2>
                 <!-- Add your login form fields here -->
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                     <input type="text"  id="firstname" placeholder="" maxlength="50" required>
                     <label for="fullname">First Name</label>
                 </div>
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                     <input type="text"  id="lastname" placeholder="" maxlength="50" required>
                     <label for="fullname">Last Name</label>
                 </div>
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <input type="text" maxlength="100" id="street" placeholder="" required>
                     <label label for="address1">Street</label>
                 </div> 
-                <!-- <div class="input-box">
-                    <span class="icon"><ion-icon name="person"></ion-icon></span>
-                    <input type="text" maxlength="100" id="address2" name="address2" placeholder="Enter address 2">
-                    <label label for="address2">Address 2</label>
-                </div>  -->
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <input type="text" maxlength="100"  id="city" name="city" placeholder="" required>
                     <label for="city">City </label>
                 </div>
@@ -99,7 +108,7 @@
                     </select>
                 </div>
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <input type="text" id="zipcode" name="zipcode" placeholder="" required minlength="5" maxlength="9" pattern="[0-9]{5,9}" required>
                     <label for="zipcode">Zipcode</label>
                 </div>
