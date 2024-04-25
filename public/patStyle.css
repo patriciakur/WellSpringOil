@@ -200,28 +200,21 @@ tr:nth-child(even) {
 
 
 .footer {
-  position: fixed;
-  bottom: 10px;
-  width: 100%;
   background: purple;
   color: #fff;
   display: flex;
-  /*align-items: center;*/
+  align-items: center;
   justify-content: center;
-  /*padding: 5px;*/
+  padding: 50px;
 }
 
 .contact {
-  margin: 50px;
+  margin: 100px;
 }
 
 .copyright {
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
   background-color: purple;
   text-align: center;
   color: #ffffff;
   font-size: 12px;
-  padding-bottom: 2px;
 }
