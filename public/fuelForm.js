@@ -33,7 +33,7 @@ async function submitForm() {
 
     if (bool == false)
     {
-        alert("Please enter a valid Address!");
+        alert("Please enter a valid Address!\nShould be in the following format:\n123 Oak Drive, Tomball, Texas, 77355");
         event.preventDefault();
         return;
     }
@@ -76,6 +76,7 @@ async function calPricePerGallon()  {
     let isTexasChecked = document.getElementById("texasCheckbox").checked;
     let hasOrderedBefore = document.getElementById("orderedBeforeCheckbox").checked;
     let margin = 0.0;
+    let suggestedprice = 0.0;
 
     if (hasOrderedBefore)
         if (isTexasChecked)
@@ -100,8 +101,11 @@ async function calPricePerGallon()  {
     
     PRICE_.price = 1.5*margin;
 
+
+    
     total = PRICE_.price * galreq;
-    document.getElementById('price-per-gallon').value= `$${pricePerGallon.toFixed(2)}`;
+    suggestedprice = total / galreq;
+    document.getElementById('price-per-gallon').value= `$${suggestedprice.toFixed(2)}`;
     document.getElementById('total-amount-due').value= `$${total.toFixed(2)}`;
     } catch(error){
         console.log(error);
