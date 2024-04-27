@@ -24,7 +24,7 @@ async function submitForm() {
     const deliveryDate = document.getElementById('delivery-date').value;
     const pricePerGallon = document.getElementById('price-per-gallon').value;
     const total = document.getElementById('total-amount-due').value;
-    const bool = false;
+    let bool = false;
 
 
     // Regular expression to match the address format
@@ -68,8 +68,8 @@ async function calPricePerGallon()  {
     let total = 0.0;
     const pricePerGallon = PRICE_.price;
     const galreq = document.querySelector("#gallons").value;
-    const isTexasChecked = document.getElementById("texasCheckbox").checked;
-    const hasOrderedBefore = document.getElementById("orderedBeforeCheckbox").checked;
+    let isTexasChecked = document.getElementById("texasCheckbox").checked;
+    let hasOrderedBefore = document.getElementById("orderedBeforeCheckbox").checked;
     let margin = 0.0;
 
     if (hasOrderedBefore)
