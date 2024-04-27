@@ -24,16 +24,16 @@ async function submitForm() {
     const deliveryDate = document.getElementById('delivery-date').value;
     const pricePerGallon = document.getElementById('price-per-gallon').value;
     const total = document.getElementById('total-amount-due').value;
-    let bool = false;
+    let bool = true;
 
 
     // Regular expression to match the address format
-    const addressRegex = /^\d+ [a-zA-Z ]{5,20}, [a-zA-Z ]{5,20}, [a-zA-Z]{2}, [#]{5}$/;
+    const addressRegex = /^\d+ [a-zA-Z ]{1,50}, [a-zA-Z ]{1,50}, [a-zA-Z]{1,16}, \d{5}$/;
     bool = addressRegex.test(deliveryAddress);
-
+    console.log(bool);
     if (bool == false)
     {
-        alert("Please enter a valid Address!\nShould be in the following format:\n123 Oak Drive, Tomball, Texas, 77355");
+        alert("Please enter a valid Address!\nShould be in the following format:\n123 Oak Drive, Tomball, TX, 77355");
         event.preventDefault();
         return;
     }
