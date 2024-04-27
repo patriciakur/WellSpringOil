@@ -13,10 +13,6 @@ addEventListener("DOMContentLoaded", function() {
  });
 
 
-const username_ = sessionStorage.getItem("USERNAME_");
-const divElement = document.getElementById("myDiv");
-divElement.innerHTML = username_;
-
 
 //function to submit Form
 async function submitForm() {
@@ -28,6 +24,16 @@ async function submitForm() {
     const deliveryDate = document.getElementById('delivery-date').value;
     const pricePerGallon = document.getElementById('price-per-gallon').value;
     const total = document.getElementById('total-amount-due').value;
+    const bool = false;
+
+
+    // Regular expression to match the address format
+    const addressRegex = /^\d+ [a-zA-Z ]{5,20}, [a-zA-Z ]{5,20}, [a-zA-Z]{2}, [#]{5}$/;
+    bool = addressRegex.test(deliveryAddress);
+
+    if (bool == false)
+        alert("Please enter a valid Address!");
+
 
     // Send form data to server
     const response = await fetch('http://localhost:3000/submitQuote', {
@@ -58,10 +64,36 @@ async function calPricePerGallon()  {
             'Content-Type': 'application/json'
         },
     });
-    const price = await response.json();
-    const pricePerGallon = price.price;
+    let PRICE_ = await response.json();
+    let total = 0.0;
+    const pricePerGallon = PRICE_.price;
     const galreq = document.querySelector("#gallons").value;
-    total = price.price * galreq;
+    const isTexasChecked = document.getElementById("texasCheckbox").checked;
+    const hasOrderedBefore = document.getElementById("orderedBeforeCheckbox").checked;
+    let margin = 0.0;
+
+    if (hasOrderedBefore)
+        if (isTexasChecked)
+            margin = margin + .01;
+        else
+            margin = margin + .03;
+    else 
+        if (isTexasChecked)
+            margin = margin + .02;
+        else 
+        margin = margin + .04;
+    margin = margin + .1;
+    console.log("margin", margin);
+    console.log("price", PRICE_);
+
+    if (galreq > 1000)
+        margin = margin + .02;
+    else
+        margin = margin + .03;
+    
+    PRICE_.price = 1.5*margin;
+
+    total = PRICE_.price * galreq;
     document.getElementById('price-per-gallon').value= `$${pricePerGallon.toFixed(2)}`;
     document.getElementById('total-amount-due').value= `$${total.toFixed(2)}`;
     } catch(error){
