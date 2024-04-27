@@ -4,12 +4,12 @@ const pool = require('./creds');
 const router = express.Router();
 
 //Check username and zipcode
-router.get('/:userName/:zipcode', async (req, res) => {
-    const {userName, zipcode} = req.params;
+router.get('/:userName/:zipCode', async (req, res) => {
+    const {userName, zipCode} = req.params;
     console.log("Checking user:" + userName);
-    console.log("Checking zipcode: " + zipcode);
+    console.log("Checking zipcode: " + zipCode);
 
-    const checkZip = await pool.query(`SELECT * FROM user_profile WHERE username = '${userName}' AND zip = '${parseInt(zipcode)}'`);
+    const checkZip = await pool.query(`SELECT * FROM user_profile WHERE username = '${userName}' AND zip = '${parseInt(zipCode)}'`);
     if (checkZip.rows.length == 0){
         console.log("User not found");
         res.json(checkZip);

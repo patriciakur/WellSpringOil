@@ -9,6 +9,14 @@ async function updateUser(username, fullname, add1, city, state, zip,) {
   }
 */
 
+router.get('/', async (req, res) => {
+    const allUsers = await pool.query(`SELECT * FROM user_credentials;`);
+    const lastUser = allUsers.rows[allUsers.rows.length-1];
+    console.log(lastUser);
+    const lastUserProfile = await pool.query(`SELECT * FROM user_profile WHERE username = '${lastUser.name}';`);
+    // console.log("User Profile: ", lastUserProfile)
+    res.json(lastUserProfile);
+});
 
 router.post('/:firstname/:lastname/:street/:city/:state/:zipcode', async (req, res) => {
     const{firstname, lastname, street, city, state, zipcode} = req.params;
@@ -24,20 +32,18 @@ router.post('/:firstname/:lastname/:street/:city/:state/:zipcode', async (req, r
     const lastUser = allUsers.rows[allUsers.rows.length-1];
     console.log(lastUser);
 
-    // const dup = await pool.query(`SELECT * FROM user_info WHERE username = '${lastUser.username}';`);
-    // if (dup.rows.length == 0){
-    //     var newProfile = await pool.query(`INSERT INTO clientinformation (username, fullname, address1, address2, city, state, zipcode) 
-    //         VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`, [lastUser.username, fullName, address1, address2, city, state, zipcode]);
-    // }
-    // else{
-    //     var newProfile = await pool.query(`UPDATE clientinformation 
-    //     SET fullname = '${fullName}', address1 = '${address1}', address2 = '${address2}', city = '${city}', state = '${state}', zipcode = '${zipcode}'
-    //     WHERE username ='${lastUser.username}';`);
-    // }
+    const dup = await pool.query(`SELECT * FROM user_profile WHERE username = '${lastUser.username}';`);
+    if (dup.rows.length == 0){
+        var newProfile = await pool.query(`INSERT INTO user_profile (firstname, lastname, street, city, state, zip, username) 
+            VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`, [firstname, lastname, street, city, state, zipcode, lastUser.name]);
+        console.log(newProfile);
+    }
+    else{
+        var newProfile = await pool.query(`UPDATE user_profile 
+        SET firstname = '${firstname}', lastname = '${lastname}', street = '${street}', city = '${city}', state = '${state}', zip = '${zipcode}'
+        WHERE username ='${lastUser.username}';`);
+    }
 
-    var newProfile = await pool.query(`INSERT INTO user_profile (userID, firstname, lastname, street, city, state, zip, username) 
-            VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`, [123, firstname, lastname, street, city, state, zipcode, lastUser.name]);
-    console.log(newProfile);
     res.json();
 })
 

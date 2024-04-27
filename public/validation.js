@@ -174,16 +174,27 @@ async function checkZip(){
     const firstname = document.querySelector("#firstname").value;
     const lastname = document.querySelector("#lastname").value;
     const street = document.querySelector("#street").value;
-    // var address2 = document.querySelector("#address2").value;
     const city = document.querySelector("#city").value;
     const state = document.querySelector("#state").value;
     const zipcode = document.querySelector("#zipcode").value;
+
+    const address = street + ", " +  city + " " + zipcode;
+
+    const addressRegex = /^\d+ [a-zA-Z0-9\s]+, [a-zA-Z\s]+ \d{5}$/;
+
     
+   
     if (containsChar(zipcode) || containsSpace(zipcode) || containsSpecialChars(zipcode) || zipcode.length < 5){
         alert("Please enter a valid Zip Code!");
         var btn = document.getElementById("updatesuccess");
         btn.innerHTML = "";
         event.preventDefault();
+    }
+     // Test if the string matches the address format
+    else if (addressRegex.test(address) == false)
+    {
+        alert("Please enter a valid address");
+        event.preventDefault();        
     }
     else{
         // if (address2 == "") address2 = "NA";
@@ -206,5 +217,4 @@ async function checkZip(){
             }
         }
     }
-    
 }
