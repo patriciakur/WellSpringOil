@@ -80,4 +80,26 @@ async function resetPw(callback) {
         });
     } catch(err) {}
 }    
-module.exports = {containsChar, containsSpecialChars, containsSpecialCharsNumbers, containsSpace, UserNameExist, checkValidsUserPwd, resetPw}
+
+async function checkZip(callback){
+    callback();
+    /*const fullName = document.querySelector("#fullname").value;
+    const address1 = document.querySelector("#address1").value;
+    var address2 = document.querySelector("#address2").value;
+    const city = document.querySelector("#city").value;
+    const state = document.querySelector("#state").value;
+    const zipcode = document.querySelector("#zipcode").value;*/
+    
+    try{
+        const response = await fetch(`http://localhost:3000/profile/${fullName}/${address1}/${address2}/${city}/${state}/${zipcode}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify()
+        });
+        
+    } catch(err){
+        
+    }
+    
+}
+module.exports = {containsChar, containsSpecialChars, containsSpecialCharsNumbers, containsSpace, UserNameExist, checkValidsUserPwd, resetPw, checkZip}

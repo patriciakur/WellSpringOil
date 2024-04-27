@@ -29,3 +29,9 @@ test('tests for input validations', async () => {
     validation.resetPw(mock);
     expect(mock).toHaveBeenCalled();
   })
+
+  test('tests if zip code is valid', async () => {
+    const mock = jest.fn();
+    validation.checkZip(mock);
+    expect(mock).toHaveBeenCalled();
+  })
