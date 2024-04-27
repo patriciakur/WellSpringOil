@@ -1,4 +1,3 @@
-var total = -1;
 
 async function calPricePerGallon(callback){
     callback();
@@ -32,22 +31,22 @@ async function submitForm(callback){
     //const galreq = document.querySelector("#gallonRequest").value;
     //var datereq = document.querySelector("#dateRequest").value;
     try{
-        if (total < 0) {
+        // if (total < 0) {
            
-            document.getElementById("fuelquote").innerHTML = '<i>Please click `CALCULATE` to get your total due!</i>';
+        //     document.getElementById("fuelquote").innerHTML = '<i>Please click `CALCULATE` to get your total due!</i>';
+        // }
+        
+        try{
+            const response = await fetch(`http://localhost:3000/quote/${galreq}/${datereq}/${total}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify()
+            });
+            
+        }catch(err){
+            
         }
-        else {
-            try{
-                const response = await fetch(`http://localhost:3000/quote/${galreq}/${datereq}/${total}`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify()
-                });
-                
-            }catch(err){
-                
-            }
-        }
+        
     }catch(err){
 
     }
