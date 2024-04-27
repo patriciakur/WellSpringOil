@@ -32,7 +32,12 @@ async function submitForm() {
     bool = addressRegex.test(deliveryAddress);
 
     if (bool == false)
+    {
         alert("Please enter a valid Address!");
+        event.preventDefault();
+        return;
+    }
+
 
 
     // Send form data to server
@@ -85,11 +90,13 @@ async function calPricePerGallon()  {
     margin = margin + .1;
     console.log("margin", margin);
     console.log("price", PRICE_);
+    console.log("PRICE_.price", PRICE_.price);
 
     if (galreq > 1000)
         margin = margin + .02;
     else
         margin = margin + .03;
+    margin = margin + 1;
     
     PRICE_.price = 1.5*margin;
 

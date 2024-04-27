@@ -277,45 +277,6 @@ header a {
     height: 150px;
 }
 
-.fuelform {
-    width: 100%;
-    padding: 50px;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    /* Vertically center the child elements */
-    justify-content: center;
-    /* Horizontally center the child elements */
-}
-
-.purble {
-    width: 1000px;
-    height: 500px;
-    /* Set the height as needed */
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, .5) 50%, rgba(0, 0, 0, .65) 75%), url('assets/purple.jpg');
-    overflow: hidden;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-
-.fuelButton {
-    max-width: 40%;
-    margin: 50px;
-    color: #ffffff;
-}
-
-.fuelButton h2 {
-    font-size: 48px;
-}
-
-.fuelButton h3 {
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
 
 .purple-button {
     background-color: purple;
