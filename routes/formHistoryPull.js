@@ -18,10 +18,16 @@ router.get('/', async (req, res) => { //'/:cookie'
         }
     }*/
 
-    // Query to fetch form history based on the UserID key
+    const allUsers = await pool.query(`SELECT * FROM user_credentials;`);
+    const lastUser = allUsers.rows[allUsers.rows.length-1];
+    const lastUserQuoteHistory = await pool.query(`SELECT * FROM formhistory WHERE username = '${lastUser.name}';`);
+    res.json(lastUserQuoteHistory);
+
+    /*// Query to fetch form history based on the UserID key
     const query = `SELECT *
 	FROM public."formhistory"
 	;` //WHERE "formhistory"."userID" = ${userID}
+    
 
     const checkHistory = await pool.query(query, (error, results) => {//[userId],
         if (error) {
@@ -30,7 +36,9 @@ router.get('/', async (req, res) => { //'/:cookie'
         } else {
             res.json(results);
         }
-    });
+    });*/
 });
+
+
 
 module.exports = router

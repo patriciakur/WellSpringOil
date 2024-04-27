@@ -1,15 +1,13 @@
 async function pullHistory() {
     try{
-        const response = await fetch(`http://localhost:3000/formHistoryPull/`, { //${document.cookie}
+        //print fuel quote history
+        const response = await fetch(`http://localhost:3000/formHistoryPull`, {
             method: "GET",
             headers: { "Content-Type": "application/json" },
         });
 
-        //call to the route to get the form history
-        const formHistory = await response.json(); 
-        console.log("called pullHistory");
-        
-        populateTable(formHistory);
+        const quote = await response.json();
+        populateTable(quote);
     } catch(err){
         console.log(err.message);
     }
